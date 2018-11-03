@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue Js Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script type = "text/javascript" src="js/vue.js"></script> -->
+</head>
+<body>
+    <div id="intro" style="text-align:center">
+        <h1>{{ message }}</h1>
+        <p>{{ firstname }}</p>
+        <p>{{ lastname }}</p>
+        <p>Currently I stay in {{ address }}</p>
+        <p>{{ mydetails() }}</p>
+        
+    </div>
+    <script>
+
+        var vue_det = new Vue({
+            el : '#intro',
+            data : {
+                message: 'My First VueJS Task',
+                firstname : "Prasad",
+                lastname : "Pawar",
+                address : "Mumbai" 
+            },
+            methods : {
+                mydetails : function(){
+                    return 'I am '+ this.firstname + " " + this.lastname;
+                }
+
+            }
+        });
+    </script>
+</body>
+</html>
